@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "eQalr+1qdNr4sGaMPPgJ/wxP5x42vesWl/q5Qj2pcGc=",
+  "Source": "MSGraph.SendEmail",
+  "BasePath": "_content/MSGraph.SendEmail",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

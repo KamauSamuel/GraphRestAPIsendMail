@@ -1,0 +1,6 @@
+@MSGraph.SendEmail_HostAddress = http://localhost:5121
+
+GET {{MSGraph.SendEmail_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,4 +1,4 @@
-# My Project
+# Microsoft Graph Send Email API
 A Web API using Microsoft Graph SDK to Create and Send Emails with File Attachments
 # Pre-requisites
 You would need to pre-configure the Application on the Azure portal and grant it consent to send emails (Mail.Send). The settings from the azure portal then are updated on the appsetting.json file
@@ -36,5 +36,5 @@ The [FormFileUpload class] (MSGraph.SendEmail/File Attachment/FormFileUpload.cs)
 
 ### Combining Everything on the Controller
 The [SendMailController](MSGraph.SendEmail/Controllers/SendMailController.cs) combines everything together on a POST endpoint with the method SendEmail(). The Message resource type is created and the properties are updated from the DTO (subject, toRecipients, body and Attachments).
-The [sendMail method] (https://learn.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=csharp#example-3-create-a-message-with-a-file-attachment-and-send-the-message) is called and the message and savetoSentItems are added as [parameters] (https://learn.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=csharp#request-body).
+The [sendMail method] (https://learn.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=csharp#example-3-create-a-message-with-a-file-attachment-and-send-the-message) is called and the message and savetoSentItems are added as [parameters] (https://learn.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=csharp#request-body). This method saves the message in the Sent Items folder.
 

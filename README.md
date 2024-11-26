@@ -1,7 +1,7 @@
 # My Project
 A Web API using Microsoft Graph SDK to Create and Send Emails with File Attachments
 # Pre-requisites
-You would need to pre-configure the app on the Azure portal and grant it consent to send emails. The settings from the azure portal then are updated on the appsetting.json file
+You would need to pre-configure the Application on the Azure portal and grant it consent to send emails (Mail.Send). The settings from the azure portal then are updated on the appsetting.json file
 
     clientId = "YOUR_CLIENT_ID";
     tenantId = "YOUR_TENANT_ID";
@@ -20,9 +20,6 @@ This section provides an overview of the main classes and controllers used in th
 - **MessageCollection**: Add email attachment
 - **RequestBody**: A DTO acting as the request body.
 
-## FormFileUpload
-This class contains the method gets files from iform file and returns a list of file attachments
-
 ### Authentication
 [AuthenticationProvider Class](MSGraph.SendEmail/Authentication/AuthenticationProvider.cs) caters for authentication on the API. The [AppRegistration](MSGraph.SendEmail/Authentication/AppRegistration.cs) gets the authentication details from the app settings json file 
 and later in the controller the method getGraphClient is called and it returns a GraphServiceClient instance. 
@@ -36,5 +33,8 @@ The [FormFileUpload class] (MSGraph.SendEmail/File Attachment/FormFileUpload.cs)
  - contentType : The content type of the attachment.
 
   This class returns a list of type FileAttachment which is later added as an email attachment to the email body on the Controller
+
 ### Combining Everything on the Controller
+The [SendMailController](MSGraph.SendEmail/Controllers/SendMailController.cs) combines everything together on a POST endpoint with the method SendEmail(). The Message resource type is created and the properties are updated from the DTO (subject, toRecipients, body and Attachments).
+The [sendMail method] (https://learn.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=csharp#example-3-create-a-message-with-a-file-attachment-and-send-the-message) is called and the message and savetoSentItems are added as [parameters] (https://learn.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=csharp#request-body).
 

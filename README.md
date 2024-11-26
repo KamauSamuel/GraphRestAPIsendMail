@@ -26,7 +26,7 @@ and later in the controller the method getGraphClient is called and it returns a
 
 ### FormFileUpload
 In addition to the [DTO](MSGraph.SendEmail/Model/RequestBody.cs) collecting the subject, recipient and email body, users can also upload files as email attachments. 
-The [FormFileUpload class] (MSGraph.SendEmail/File Attachment/FormFileUpload.cs) contains the method UploadAttachment() which takes a List of type IForm file as an argument and returns a list of file attachments. The method gets each file from the iform file, checks for null then retreives the following:
+The [FormFileUpload class](MSGraph.SendEmail/File Attachment/FormFileUpload.cs) contains the method UploadAttachment() which takes a List of type IForm file as an argument and returns a list of file attachments. The method gets each file from the iform file, checks for null then retreives the following:
  - Name (Required) : The name representing the text that is displayed below the icon representing the embedded attachment
  - ContentByte (Required): The base64-encoded contents of the file
  - Adds : "@odata.type": "#microsoft.graph.fileAttachment"
